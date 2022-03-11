@@ -3,7 +3,7 @@ import '_user_exporter.dart';
 
 extension UserValidationExtension on User {
   List<ValidatorBase> emailValidators() {
-    String model = "Kullanıcı Adı";
+    String model = "E-mail";
     String value = email!;
     return [
       NotEmpty(

@@ -59,18 +59,14 @@ class _RegularTextFormFieldState extends State<RegularTextFormField> {
   @override
   void initState() {
     super.initState();
-    if (widget.validatorList
-        .any((element) => element.validationLevel == ValidationLevel.WARNING)) {
+    if (widget.validatorList.any((element) => element.validationLevel == ValidationLevel.WARNING)) {
       widget.controller.addListener(() {
-        warningMessage =
-            widget.validatorList.getWarningMessage(widget.controller.text) ??
-                "";
+        warningMessage = widget.validatorList.getWarningMessage(widget.controller.text) ?? "";
         doesContainWarning = warningMessage != "";
         setState(() {});
       });
     }
-    warningMessage =
-        widget.validatorList.getWarningMessage(widget.controller.text) ?? "";
+    warningMessage = widget.validatorList.getWarningMessage(widget.controller.text) ?? "";
     doesContainWarning = warningMessage != "";
   }
 
@@ -82,6 +78,7 @@ class _RegularTextFormFieldState extends State<RegularTextFormField> {
       decoration: InputDecoration(
         enabled: widget.enabled,
         fillColor: widget.fillColor,
+        contentPadding: const EdgeInsets.all(14),
         filled: true,
         hintText: widget.hintText ?? '',
         labelText: widget.labelText ?? '',
@@ -90,14 +87,18 @@ class _RegularTextFormFieldState extends State<RegularTextFormField> {
         floatingLabelBehavior: widget.floatingLabelBehavior,
         labelStyle: JojoTextStyle.textFieldLabel(context: context),
         border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: KColors.primaryColor),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: KColors.hoverColor),
+          borderRadius: BorderRadius.circular(15),
         ),
         prefixIcon: Padding(
           padding: widget.iconPadding ?? EdgeInsets.zero,
           child: Icon(
             widget.prefixIconData,
-            color: Colors.black.withOpacity(0.5),
+            color: Colors.black.withOpacity(0.2),
           ),
         ),
         suffixIcon: widget.suffixIconData != null
@@ -107,7 +108,7 @@ class _RegularTextFormFieldState extends State<RegularTextFormField> {
                   onTap: widget.onSuffixPressed ?? () {},
                   child: Icon(
                     widget.suffixIconData,
-                    color: Colors.black.withOpacity(0.5),
+                    color: Colors.black.withOpacity(0.2),
                   ),
                 ),
               )

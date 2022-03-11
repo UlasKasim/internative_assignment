@@ -19,6 +19,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final ServerController serverController = Get.put(ServerController());
   @override
   void initState() {
     super.initState();
@@ -32,13 +33,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Suw.init(
       GetMaterialApp(
+        navigatorObservers: [HeroController()],
         transitionDuration: const Duration(microseconds: 1),
         theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: Colors.white,
           primaryColor: KColors.primaryColor,
           appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
-          textTheme:
-              GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(
+          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(
             bodyColor: Colors.black,
           ),
         ),

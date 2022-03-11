@@ -2,24 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NavigationUtil {
-  static void pushNamed(String route) {
+  static void getPushNamed(String route) {
     if (Get.currentRoute == route) return;
 
-    Get.offNamedUntil(
+    Get.toNamed(
       route,
-      (route) => route.isFirst,
     );
   }
 
-  static void push(Widget page) {
-    Get.offUntil(
-        GetPageRoute(
-          page: () => page,
-          transition: Transition.noTransition,
-          // curve: Curves.bounceIn,
-          // transitionDuration: Duration(milliseconds: 300),
-        ),
-        (route) => route.isFirst);
+  static void getPush(Widget page) {
+    Get.to(GetPageRoute(
+      page: () => page,
+      transition: Transition.noTransition,
+    ));
   }
 
   static void offAll(Widget page) {
@@ -27,6 +22,7 @@ class NavigationUtil {
   }
 
   static void offAllNamed(String route) {
+    if (Get.currentRoute == route) return;
     Get.offAllNamed(route);
   }
 }

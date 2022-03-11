@@ -10,12 +10,13 @@ import '../_controller_exporter.dart';
 class UserController extends GetxController {
   Rx<User> userX = User().obs;
   bool isLogged() => ServerConfig.TOKEN.isNotEmpty;
-  late SharedPreferences sharedPreferences;
+  SharedPreferences? sharedPreferences;
 
   @override
   void onInit() async {
     super.onInit();
     sharedPreferences = await SharedPreferences.getInstance();
+    await getPreferences();
   }
 
   Future<void> signIn({
@@ -60,12 +61,12 @@ class UserController extends GetxController {
   }
 
   void savePreferences(User user) async {
-    sharedPreferences.setString("email", user.email!);
-    sharedPreferences.setString("password", user.password!);
+    sharedPreferences?.setString("email", user.email!);
+    sharedPreferences?.setString("password", user.password!);
   }
 
-  void getPreferences() {
-    userX.value.onEmailChanged(sharedPreferences.getString("email") ?? "");
-    userX.value.onPasswordChanged(sharedPreferences.getString("password") ?? "");
+  Future<void> getPreferences() async {
+    userX.value.onEmailChanged(sharedPreferences?.getString("email") ?? "");
+    userX.value.onPasswordChanged(sharedPreferences?.getString("password") ?? "");
   }
 }

@@ -54,20 +54,17 @@ class _RectangleTextButtonState extends State<RectangleTextButton> {
       height: widget.height ?? 50,
       width: widget.width ?? 150,
       decoration: KDecoration.boxDecoration(
-          borderColor:
-              widget.borderColor ?? KColors.primaryColor.withOpacity(0.4),
-          borderRadius: const BorderRadius.all(Radius.circular(5)),
-          backColor:
-              isPressable ? widget.backColor : widget.backColor.withAlpha(80)),
+          borderColor: widget.borderColor ?? KColors.primaryColor.withOpacity(0.4),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          backColor: isPressable ? widget.backColor : widget.backColor.withAlpha(80)),
       child: Material(
-        borderRadius: const BorderRadius.all(Radius.circular(5)),
+        borderRadius: const BorderRadius.all(Radius.circular(15)),
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: const BorderRadius.all(Radius.circular(5)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
           hoverColor: widget.hoverColor ?? KColors.hoverColor.withOpacity(0.1),
           onTap: () {
-            if ((DateTime.now().millisecondsSinceEpoch - time) / 1000 >
-                cooldown) {
+            if ((DateTime.now().millisecondsSinceEpoch - time) / 1000 > cooldown) {
               stateReset();
               time = DateTime.now().millisecondsSinceEpoch;
               widget.onPressed?.call();
@@ -102,10 +99,10 @@ class _RectangleTextButtonState extends State<RectangleTextButton> {
                   ),
                 ),
               ),
-              // if (icon != null)
-              //   SizedBox(
-              //     width: 45,
-              //   )
+              if (widget.icon != null)
+                SizedBox(
+                  width: (widget.iconSize ?? 28) + 16,
+                )
             ],
           ),
         ),

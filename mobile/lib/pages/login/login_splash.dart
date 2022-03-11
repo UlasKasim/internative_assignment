@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/constants/_constants_exporter.dart';
+import 'package:mobile/pages/login/_login_page_exporter.dart';
 
 class LoginSplash extends StatefulWidget {
   const LoginSplash({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _LoginSplashState extends State<LoginSplash> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2))
-        .then((value) => NavigationUtil.offAllNamed(AppRoutes.SIGN_IN));
+        .then((value) => NavigationUtil.getPushNamed(AppRoutes.SIGN_IN));
   }
 
   @override
@@ -22,9 +23,9 @@ class _LoginSplashState extends State<LoginSplash> {
     return Scaffold(
       body: Center(
         child: Hero(
-          tag: 'logo',
+          tag: LoginConstants.logoHeroTag,
           child: Image.asset(
-            'assets/images/logo.png',
+            LoginConstants.logoPath,
             fit: BoxFit.cover,
           ),
         ),

@@ -176,26 +176,20 @@ class JojoTextStyle {
             color: color ?? Colors.black,
             height: 0.5,
           );
-  static TextStyle? title(
-          {required BuildContext context,
-          Color? color,
-          FontWeight? fontWeight}) =>
-      Theme.of(context).textTheme.headline6?.copyWith(
-          color: color ?? Colors.black,
-          fontWeight: fontWeight ?? FontWeight.w600);
+  static TextStyle? title({required BuildContext context, Color? color, FontWeight? fontWeight}) =>
+      Theme.of(context)
+          .textTheme
+          .headline6
+          ?.copyWith(color: color ?? Colors.black, fontWeight: fontWeight ?? FontWeight.w600);
 
   static TextStyle? subTitle(
-          {required BuildContext context,
-          Color? color,
-          FontWeight? fontWeight}) =>
+          {required BuildContext context, Color? color, FontWeight? fontWeight}) =>
       Theme.of(context).textTheme.subtitle1?.copyWith(
             color: color ?? Colors.black,
             fontWeight: fontWeight ?? FontWeight.normal,
           );
   static TextStyle? subText(
-          {required BuildContext context,
-          Color? color,
-          FontWeight? fontWeight}) =>
+          {required BuildContext context, Color? color, FontWeight? fontWeight}) =>
       Theme.of(context).textTheme.caption?.copyWith(
             color: color ?? Colors.black.withOpacity(0.7),
             fontWeight: fontWeight ?? FontWeight.normal,
@@ -212,8 +206,7 @@ class JojoTextStyle {
             fontWeight: FontWeight.w500,
           );
 
-  static TextStyle? tableTitle2(
-          {required BuildContext context, Color? color}) =>
+  static TextStyle? tableTitle2({required BuildContext context, Color? color}) =>
       Theme.of(context).textTheme.subtitle2?.copyWith(
             color: color ?? Colors.black,
             fontWeight: FontWeight.w500,
@@ -224,19 +217,14 @@ class JojoTextStyle {
             color: color ?? Colors.black.withOpacity(0.5),
           );
 
-  static TextStyle? textFieldLabel(
-          {required BuildContext context, Color? color}) =>
+  static TextStyle? textFieldLabel({required BuildContext context, Color? color}) =>
       Theme.of(context)
           .textTheme
-          .bodyText1
-          ?.copyWith(color: color ?? Colors.black.withOpacity(0.5), height: 1);
+          .bodySmall
+          ?.copyWith(color: color ?? Colors.black.withOpacity(0.2), height: 1);
 
-  static TextStyle? textFieldHint(
-          {required BuildContext context, Color? color}) =>
-      Theme.of(context)
-          .textTheme
-          .bodyText1
-          ?.copyWith(color: color ?? Colors.black);
+  static TextStyle? textFieldHint({required BuildContext context, Color? color}) =>
+      Theme.of(context).textTheme.bodyText1?.copyWith(color: color ?? Colors.black);
 
   static TextStyle? menuText({required BuildContext context, Color? color}) =>
       JojoTextStyle.tableTitle(
