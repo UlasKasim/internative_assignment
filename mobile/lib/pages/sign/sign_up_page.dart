@@ -26,7 +26,7 @@ class _SignUpPageState extends State<SignUpPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            SignConstants.sign,
+            SignConstants.login,
             style: KTextStyle.h1(
               textStyleBase: const TextStyleBase(
                 fontWeight: FontWeight.bold,
@@ -121,7 +121,7 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               Expanded(
                 child: RectangleTextButton(
-                  text: SignConstants.sign,
+                  text: SignConstants.login,
                   backColor: Colors.white,
                   textStyle: KTextStyle.h3(
                     textStyleBase: const TextStyleBase(),

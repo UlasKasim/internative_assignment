@@ -9,5 +9,6 @@ class ServerController extends GetxController {
 
   Future<void> onStartServer() async {
     await categoryController.getCategoriesThunk();
+    await accountController.getAccountThunk();
   }
 }

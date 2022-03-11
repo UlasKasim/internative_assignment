@@ -26,7 +26,7 @@ class _SignInPageState extends State<SignInPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            SignConstants.sign,
+            SignConstants.login,
             style: KTextStyle.h1(
               textStyleBase: const TextStyleBase(
                 fontWeight: FontWeight.bold,
@@ -92,7 +92,7 @@ class _SignInPageState extends State<SignInPage> {
             children: [
               Expanded(
                 child: RectangleTextButton(
-                  text: SignConstants.sign,
+                  text: SignConstants.login,
                   backColor: KColors.primaryColor,
                   textStyle: KTextStyle.h3(
                     textStyleBase: const TextStyleBase(

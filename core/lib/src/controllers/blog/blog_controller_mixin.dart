@@ -34,6 +34,6 @@ mixin BlogControllerMixin {
   }
 
   void redraw() {
-    blogMapX.subject.add(blogMapX.value);
+    blogMapX.refresh();
   }
 }

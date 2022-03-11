@@ -17,7 +17,7 @@ class KDecoration {
       border: Border.all(width: borderWidth, color: borderColor),
       image: backgroundImagePath != null
           ? DecorationImage(
-              image: AssetImage(backgroundImagePath),
+              image: NetworkImage(backgroundImagePath),
               fit: boxFit ?? BoxFit.cover,
             )
           : null,

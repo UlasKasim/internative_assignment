@@ -11,10 +11,7 @@ class NavigationUtil {
   }
 
   static void getPush(Widget page) {
-    Get.to(GetPageRoute(
-      page: () => page,
-      transition: Transition.noTransition,
-    ));
+    Get.to(() => page);
   }
 
   static void offAll(Widget page) {

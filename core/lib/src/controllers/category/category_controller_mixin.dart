@@ -34,6 +34,6 @@ mixin CategoryControllerMixin {
   }
 
   void redraw() {
-    categoryMapX.subject.add(categoryMapX.value);
+    categoryMapX.refresh();
   }
 }

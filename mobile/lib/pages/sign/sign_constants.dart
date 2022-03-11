@@ -1,5 +1,5 @@
 class SignConstants {
-  static String sign = 'Sign';
+  static String login = 'Login';
   static String register = 'Register';
   static String logoPath = 'assets/images/logo.png';
   static String logoHeroTag = 'logoHeroTag';

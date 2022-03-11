@@ -29,7 +29,7 @@ class BlogController extends GetxController with BlogControllerMixin {
   Future<void>? toggleFavorite({
     required String favoriteID,
     Function(String)? onSuccess,
-    Function? onError,
+    Function(String)? onError,
   }) async {
     try {
       var response = await BlogServices().toggleFavorite(favoriteID, errorCallback: (visibleError) {
