@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
         supportedLocales: const [Locale("tr")],
         debugShowCheckedModeBanner: false,
         getPages: getPages,
-        initialRoute: AppRoutes.LOGIN_SPLASH,
+        initialRoute: AppRoutes.SIGN_SPLASH,
       ),
     );
   }

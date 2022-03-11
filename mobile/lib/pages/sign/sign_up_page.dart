@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kernel/kernel.dart';
 import 'package:mobile/constants/_constants_exporter.dart';
-import 'package:mobile/pages/login/_login_page_exporter.dart';
+import 'package:mobile/pages/sign/_sign_page_exporter.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -26,7 +26,7 @@ class _SignUpPageState extends State<SignUpPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            LoginConstants.login,
+            SignConstants.sign,
             style: KTextStyle.h1(
               textStyleBase: const TextStyleBase(
                 fontWeight: FontWeight.bold,
@@ -56,9 +56,9 @@ class _SignUpPageState extends State<SignUpPage> {
       height: Suw.h(550),
       width: Suw.w(880),
       child: Hero(
-        tag: LoginConstants.logoHeroTag,
+        tag: SignConstants.logoHeroTag,
         child: Image.asset(
-          LoginConstants.logoPath,
+          SignConstants.logoPath,
           fit: BoxFit.cover,
         ),
       ),
@@ -73,7 +73,7 @@ class _SignUpPageState extends State<SignUpPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           RegularTextFormField(
-            labelText: LoginConstants.email,
+            labelText: SignConstants.email,
             prefixIconData: Icons.email_rounded,
             floatingLabelBehavior: FloatingLabelBehavior.auto,
             controller: TextEditingController(text: vc.userX.value.email),
@@ -83,7 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
           const SizedBox(height: 10),
           PasswordTextField(
             floatingLabelBehavior: FloatingLabelBehavior.auto,
-            labelText: LoginConstants.password,
+            labelText: SignConstants.password,
             controller: TextEditingController(text: vc.userX.value.password),
             onChanged: vc.userX.value.onPasswordChanged,
             validatorList: vc.userX.value.passwordValidators(),
@@ -91,7 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
           const SizedBox(height: 10),
           PasswordTextField(
             floatingLabelBehavior: FloatingLabelBehavior.auto,
-            labelText: LoginConstants.rePassword,
+            labelText: SignConstants.rePassword,
             controller: TextEditingController(text: vc.rePasswordX.value),
             onChanged: vc.onRePasswordChanged,
           ),
@@ -100,7 +100,7 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               Expanded(
                 child: RectangleTextButton(
-                  text: LoginConstants.register,
+                  text: SignConstants.register,
                   backColor: KColors.primaryColor,
                   textStyle: KTextStyle.h3(
                     textStyleBase: const TextStyleBase(
@@ -121,7 +121,7 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               Expanded(
                 child: RectangleTextButton(
-                  text: LoginConstants.login,
+                  text: SignConstants.sign,
                   backColor: Colors.white,
                   textStyle: KTextStyle.h3(
                     textStyleBase: const TextStyleBase(),

@@ -1,16 +1,16 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/constants/_constants_exporter.dart';
-import 'package:mobile/pages/login/_login_page_exporter.dart';
+import 'package:mobile/pages/sign/_sign_page_exporter.dart';
 
-class LoginSplash extends StatefulWidget {
-  const LoginSplash({Key? key}) : super(key: key);
+class SignSplash extends StatefulWidget {
+  const SignSplash({Key? key}) : super(key: key);
 
   @override
-  _LoginSplashState createState() => _LoginSplashState();
+  _SignSplashState createState() => _SignSplashState();
 }
 
-class _LoginSplashState extends State<LoginSplash> {
+class _SignSplashState extends State<SignSplash> {
   @override
   void initState() {
     super.initState();
@@ -23,9 +23,9 @@ class _LoginSplashState extends State<LoginSplash> {
     return Scaffold(
       body: Center(
         child: Hero(
-          tag: LoginConstants.logoHeroTag,
+          tag: SignConstants.logoHeroTag,
           child: Image.asset(
-            LoginConstants.logoPath,
+            SignConstants.logoPath,
             fit: BoxFit.cover,
           ),
         ),

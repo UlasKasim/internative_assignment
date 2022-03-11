@@ -3,30 +3,30 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kernel/kernel.dart';
 
 void main() async {
-  group("LoginService", () {
+  group("SignService", () {
     User user = User(
         email: "${CommonMethods.getRandomString(6)}@${CommonMethods.getRandomString(6)}.com",
         password: CommonMethods.getRandomString(6));
-    test("/Login/SignUp", () async {
+    test("/Sign/SignUp", () async {
       try {
-        var res = await LoginServices().signUp(user, user.password!, errorCallback: (error) {
+        var res = await SignServices().signUp(user, user.password!, errorCallback: (error) {
           fail(error);
         });
         var isResponseNull = res == null;
         expect(isResponseNull, false);
       } catch (e) {
-        fail('LoginService -> /Login/SignUp failed');
+        fail('SignService -> /Sign/SignUp failed');
       }
     });
-    test("/Login/SignIn", () async {
+    test("/Sign/SignIn", () async {
       try {
-        var res = await LoginServices().signIn(user, errorCallback: (error) {
+        var res = await SignServices().signIn(user, errorCallback: (error) {
           fail(error);
         });
         var isResponseNull = res == null;
         expect(isResponseNull, false);
       } catch (e) {
-        fail('LoginService -> /Login/SignIn failed');
+        fail('SignService -> /Sign/SignIn failed');
       }
     });
   });

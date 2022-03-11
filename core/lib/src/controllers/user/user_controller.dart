@@ -26,7 +26,7 @@ class UserController extends GetxController {
   }) async {
     try {
       ServerController serverController = Get.find();
-      var response = await LoginServices().signIn(user, errorCallback: onError);
+      var response = await SignServices().signIn(user, errorCallback: onError);
       if (response == null || response.data.isEmpty) {
         throw Exception();
       }
@@ -47,7 +47,7 @@ class UserController extends GetxController {
   }) async {
     try {
       ServerController serverController = Get.find();
-      var response = await LoginServices().signUp(user, passwordRetry, errorCallback: onError);
+      var response = await SignServices().signUp(user, passwordRetry, errorCallback: onError);
       if (response == null || response.data.isEmpty) {
         throw Exception();
       }

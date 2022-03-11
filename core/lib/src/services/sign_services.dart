@@ -4,10 +4,10 @@ import 'package:kernel/kernel.dart';
 import '../library/_library_exporter.dart';
 import 'package:http/http.dart' as http;
 
-class LoginServices {
+class SignServices {
   Future<StringApiResponse?>? signIn(User user, {required Function(String) errorCallback}) async {
     try {
-      String endpoint = ServerConfig.SERVER_URL + '/Login/SignIn';
+      String endpoint = ServerConfig.SERVER_URL + '/Sign/SignIn';
       Map<String, String> headers = ServiceFactory.jsonHeaders();
       var response = await http
           .post(Uri.parse(endpoint), headers: headers, body: user.toJson())
@@ -27,7 +27,7 @@ class LoginServices {
   Future<StringApiResponse?>? signUp(User user, String passwordRetry,
       {required Function(String) errorCallback}) async {
     try {
-      String endpoint = ServerConfig.SERVER_URL + '/Login/SignUp';
+      String endpoint = ServerConfig.SERVER_URL + '/Sign/SignUp';
       Map<String, String> headers = ServiceFactory.jsonHeaders();
       var response = await http
           .post(Uri.parse(endpoint),

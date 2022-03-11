@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kernel/kernel.dart';
 import 'package:mobile/constants/_constants_exporter.dart';
-import 'package:mobile/pages/login/_login_page_exporter.dart';
+import 'package:mobile/pages/sign/_sign_page_exporter.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -26,7 +26,7 @@ class _SignInPageState extends State<SignInPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            LoginConstants.login,
+            SignConstants.sign,
             style: KTextStyle.h1(
               textStyleBase: const TextStyleBase(
                 fontWeight: FontWeight.bold,
@@ -56,9 +56,9 @@ class _SignInPageState extends State<SignInPage> {
       height: Suw.h(550),
       width: Suw.w(880),
       child: Hero(
-        tag: LoginConstants.logoHeroTag,
+        tag: SignConstants.logoHeroTag,
         child: Image.asset(
-          LoginConstants.logoPath,
+          SignConstants.logoPath,
           fit: BoxFit.cover,
         ),
       ),
@@ -72,7 +72,7 @@ class _SignInPageState extends State<SignInPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           RegularTextFormField(
-            labelText: LoginConstants.email,
+            labelText: SignConstants.email,
             prefixIconData: Icons.email_rounded,
             floatingLabelBehavior: FloatingLabelBehavior.never,
             controller: TextEditingController(text: vc.userX.value.email),
@@ -82,7 +82,7 @@ class _SignInPageState extends State<SignInPage> {
           const SizedBox(height: 10),
           PasswordTextField(
             floatingLabelBehavior: FloatingLabelBehavior.never,
-            labelText: LoginConstants.password,
+            labelText: SignConstants.password,
             controller: TextEditingController(text: vc.userX.value.password),
             onChanged: vc.userX.value.onPasswordChanged,
             validatorList: vc.userX.value.passwordValidators(),
@@ -92,7 +92,7 @@ class _SignInPageState extends State<SignInPage> {
             children: [
               Expanded(
                 child: RectangleTextButton(
-                  text: LoginConstants.login,
+                  text: SignConstants.sign,
                   backColor: KColors.primaryColor,
                   textStyle: KTextStyle.h3(
                     textStyleBase: const TextStyleBase(
@@ -113,7 +113,7 @@ class _SignInPageState extends State<SignInPage> {
             children: [
               Expanded(
                 child: RectangleTextButton(
-                  text: LoginConstants.register,
+                  text: SignConstants.register,
                   backColor: Colors.white,
                   textStyle: KTextStyle.h3(),
                   icon: Icons.login_sharp,
