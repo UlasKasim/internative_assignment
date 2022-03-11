@@ -1,3 +1,5 @@
+import 'package:core/src/style/_style_exporter.dart';
+import 'package:core/src/widgets/_widgets_exporter.dart';
 import 'package:flutter/material.dart';
 
 class LoadingDialog extends StatelessWidget {

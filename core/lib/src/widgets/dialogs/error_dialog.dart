@@ -27,10 +27,10 @@ class ErrorDialog extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            CustomIcon(
+            const CustomIcon(
               icon: Icons.close,
               iconSize: 60,
-              borderRadiusBase: BorderRadiusBase.all(all: 50),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
             ),
             const SizedBox(height: 20),
             CustomTitle(
