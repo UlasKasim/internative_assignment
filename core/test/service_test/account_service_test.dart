@@ -2,9 +2,14 @@ import 'package:core/src/services/account_services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kernel/kernel.dart';
 
+import '../_test_common.dart';
+
 void main() async {
   group("AccountService", () {
     late Account account;
+    setUpAll(() async {
+      await getToken();
+    });
     test("/Account/Get", () async {
       try {
         var res = await AccountServices().getAccount(errorCallback: (error) {

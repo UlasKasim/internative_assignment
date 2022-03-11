@@ -2,9 +2,14 @@ import 'package:core/src/services/_services_exporter.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kernel/kernel.dart';
 
+import '../_test_common.dart';
+
 void main() async {
   group("BlogService", () {
     late Blog blog;
+    setUpAll(() async {
+      await getToken();
+    });
     test("/Blog/GetBlogs", () async {
       try {
         var res = await BlogServices().getBlogs(null, errorCallback: (error) {

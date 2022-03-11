@@ -1,22 +1,27 @@
+import 'dart:io';
+
 import 'package:core/src/services/_services_exporter.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path/path.dart' as path;
 
 import '../_test_common.dart';
 
 void main() async {
-  group("CategoryService", () {
+  group("GeneralService", () {
     setUpAll(() async {
       await getToken();
     });
-    test("/Category/GetCategorys", () async {
+    test("/General/UploadImage", () async {
       try {
-        var res = await CategoryServices().getCategories(errorCallback: (error) {
+        var res = await GeneralServices()
+            .uploadImage(File(path.absolute("assets", "images", "logo.png")), "logo.png",
+                errorCallback: (error) {
           fail(error);
         });
         var isResponseNull = res == null;
         expect(isResponseNull, false);
       } catch (e) {
-        fail('CategoryService -> /Category/GetCategories failed');
+        fail('GeneralService -> /General/UploadImage failed');
       }
     });
   });
