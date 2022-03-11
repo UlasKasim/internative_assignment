@@ -1,5 +1,11 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:klocalizations_flutter/klocalizations_flutter.dart';
+
+import 'constants/_constants_exporter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,23 +30,24 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
-    // return Suw.init(
-    //   GetMaterialApp(
-    //     transitionDuration: const Duration(microseconds: 1),
-    //     theme: ThemeData.dark().copyWith(
-    //       scaffoldBackgroundColor: KColors.white,
-    //       canvasColor: KColors.secondaryColor,
-    //       textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(
-    //         bodyColor: KColors.black,
-    //       ),
-    //     ),
-    //     localizationsDelegates: GlobalMaterialLocalizations.delegates,
-    //     supportedLocales: const [Locale("tr")],
-    //     debugShowCheckedModeBanner: false,
-    //     getPages: getPages,
-    //     initialRoute: AppRoutes.LOGIN_SPLASH,
-    //   ),
-    // );
+    return Suw.init(
+      GetMaterialApp(
+        transitionDuration: const Duration(microseconds: 1),
+        theme: ThemeData.light().copyWith(
+          scaffoldBackgroundColor: Colors.white,
+          primaryColor: KColors.primaryColor,
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+          textTheme:
+              GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(
+            bodyColor: Colors.black,
+          ),
+        ),
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
+        supportedLocales: const [Locale("tr")],
+        debugShowCheckedModeBanner: false,
+        getPages: getPages,
+        initialRoute: AppRoutes.LOGIN_SPLASH,
+      ),
+    );
   }
 }
