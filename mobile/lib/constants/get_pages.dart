@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mobile/constants/_constants_exporter.dart';
-import 'package:mobile/pages/home/_home_page_exporter.dart';
+import 'package:mobile/pages/bottom_navigation/_bottom_navigation_exporter.dart';
 import 'package:mobile/pages/sign/_sign_page_exporter.dart';
 
 List<GetPage> getPages = [
@@ -17,7 +17,7 @@ List<GetPage> getPages = [
     page: () => const SignSplash(),
   ),
   GetPage(
-    name: AppRoutes.HOME,
-    page: () => const HomePage(),
+    name: AppRoutes.BOTTOM_NAVIGATION,
+    page: () => const BottomNavigationPage(),
   ),
 ];

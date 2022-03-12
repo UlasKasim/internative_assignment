@@ -1,9 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../components/blog/blog_list_component.dart';
-import '../details/blog_details_page.dart';
+import 'package:mobile/component/_component_exporter.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);

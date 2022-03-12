@@ -1,7 +1,6 @@
+import 'package:core/src/mixin/_mixin_exporter.dart';
 import 'package:get/get.dart';
 import 'package:kernel/kernel.dart';
-
-import 'mixin/favorite_mixin.dart';
 
 class BlogDetailsVC extends GetxController with FavoriteMixin {
   Rx<Blog> blogX = Blog().obs;

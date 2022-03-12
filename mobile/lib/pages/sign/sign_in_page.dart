@@ -90,7 +90,7 @@ class _SignInPageState extends State<SignInPage> {
           GeneralButtonComponent(
             isPrimaryBackground: true,
             text: SignConstants.LOGIN,
-            onPressed: () => vc.onSignInPressed(route: AppRoutes.HOME),
+            onPressed: () => vc.onSignInPressed(route: AppRoutes.BOTTOM_NAVIGATION),
           ),
           const SizedBox(height: 10),
           GeneralButtonComponent(

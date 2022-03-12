@@ -26,6 +26,7 @@ class GeneralServices {
       }
       return StringApiResponse(response.statusCode, "Success", decodedResponse["Data"]);
     } catch (e) {
+      errorCallback.call("En error occured during image upload");
       return null;
     }
   }

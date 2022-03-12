@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile/component/_component_exporter.dart';
-import 'package:mobile/pages/home/_home_page_exporter.dart';
+import 'package:mobile/pages/profile/_profile_exporter.dart';
 
 class ModalContent extends StatelessWidget {
   // final Function
@@ -21,7 +21,7 @@ class ModalContent extends StatelessWidget {
           () => Expanded(
             child: vc.selectedFileUrl.value == ""
                 ? Center(
-                    child: Text(HomeConstants.FILE_NOT_SELECTED),
+                    child: Text(ProfileConstants.FILE_NOT_SELECTED),
                   )
                 : ImageBox(url: vc.selectedFileUrl.value, isAssetImage: false),
           ),
@@ -36,7 +36,7 @@ class ModalContent extends StatelessWidget {
             ),
             GeneralButtonComponent(
               isPrimaryBackground: true,
-              text: HomeConstants.SELECT,
+              text: ProfileConstants.SELECT,
               rotate: true,
               onlyExpand: true,
               onPressed: () {
@@ -48,7 +48,7 @@ class ModalContent extends StatelessWidget {
             ),
             GeneralButtonComponent(
               isPrimaryBackground: false,
-              text: HomeConstants.REMOVE,
+              text: ProfileConstants.REMOVE,
               rotate: true,
               onlyExpand: true,
               onPressed: vc.onFileRemovePressed,
@@ -72,10 +72,10 @@ class ModalContent extends StatelessWidget {
             KDecoration.boxDecoration(borderRadius: const BorderRadius.all(Radius.circular(25))),
         child: Column(
           children: [
-            Expanded(child: Center(child: Text(HomeConstants.SELECT_A_PICTURE))),
+            Expanded(child: Center(child: Text(ProfileConstants.SELECT_A_PICTURE))),
             GeneralButtonComponent(
               isPrimaryBackground: true,
-              text: HomeConstants.CAMERA,
+              text: ProfileConstants.CAMERA,
               icon: Icons.camera_alt_rounded,
               onPressed: () => vc.onFileSelectPressed(ImageSource.camera),
             ),
@@ -84,7 +84,7 @@ class ModalContent extends StatelessWidget {
             ),
             GeneralButtonComponent(
               isPrimaryBackground: false,
-              text: HomeConstants.GALLERY,
+              text: ProfileConstants.GALLERY,
               icon: Icons.image,
               onPressed: () => vc.onFileSelectPressed(ImageSource.gallery),
             ),

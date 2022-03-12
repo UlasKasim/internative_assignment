@@ -97,7 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
           GeneralButtonComponent(
             isPrimaryBackground: true,
             text: SignConstants.REGISTER,
-            onPressed: () => vc.onSignUpPressed(route: AppRoutes.HOME),
+            onPressed: () => vc.onSignUpPressed(route: AppRoutes.BOTTOM_NAVIGATION),
           ),
           const SizedBox(height: 10),
           GeneralButtonComponent(

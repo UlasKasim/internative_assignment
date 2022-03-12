@@ -1,10 +1,9 @@
 import 'package:core/core.dart';
+import 'package:core/src/mixin/_mixin_exporter.dart';
 import 'package:get/get.dart';
 import 'package:kernel/kernel.dart';
 
-import 'mixin/favorite_mixin.dart';
-
-class ListArticleVC extends GetxController with FavoriteMixin {
+class HomeVC extends GetxController with FavoriteMixin {
   Rx<List<Category>> categoryListX = Rx<List<Category>>([]);
   Rx<List<Blog>> blogListX = Rx<List<Blog>>([]);
   Rx<Category> selectedCategoryX = Category().obs;

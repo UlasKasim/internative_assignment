@@ -34,11 +34,16 @@ class ProfileVC extends GetxController {
   void onFileSelectPressed(ImageSource imageSource) async {
     XFile? photo = await imagePicker.pickImage(source: imageSource);
     if (photo != null) {
+      callLoadingDialog();
       await generalController.uploadImage(
         file: File(photo.path),
         filename: photo.name,
-        onError: (e) {},
+        onError: (e) {
+          closeLoadingDialog();
+          errorSnackbar(toastTitle: "Error", toastMessage: "Error occured during uploading image");
+        },
         onSuccess: (url) async {
+          closeLoadingDialog();
           selectedFileUrl.value = url;
           Get.back();
         },
