@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  AccountController accountController = Get.find();
   late PersistentTabController _controller;
   RxInt indexX = 1.obs;
 
@@ -106,7 +107,7 @@ class _HomePageState extends State<HomePage> {
       case 2:
         return "My Profile";
       default:
-        return "Home";
+        return "";
     }
   }
 }

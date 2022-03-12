@@ -6,6 +6,7 @@ class ServerController extends GetxController {
   AccountController accountController = Get.put(AccountController());
   BlogController blogController = Get.put(BlogController());
   CategoryController categoryController = Get.put(CategoryController());
+  GeneralController generalController = Get.put(GeneralController());
 
   Future<void> onStartServer() async {
     await categoryController.getCategoriesThunk();

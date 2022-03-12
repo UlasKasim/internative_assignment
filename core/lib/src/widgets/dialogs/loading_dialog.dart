@@ -1,6 +1,7 @@
 import 'package:core/src/style/_style_exporter.dart';
 import 'package:core/src/widgets/_widgets_exporter.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoadingDialog extends StatelessWidget {
   final String title;
@@ -35,5 +36,20 @@ class LoadingDialog extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+void callLoadingDialog({String title = ''}) {
+  Get.dialog(
+    LoadingDialog(
+      title: title,
+    ),
+  );
+}
+
+void closeLoadingDialog() {
+  var isDialogOpen = Get.isDialogOpen ?? true;
+  if (isDialogOpen) {
+    Get.back();
   }
 }

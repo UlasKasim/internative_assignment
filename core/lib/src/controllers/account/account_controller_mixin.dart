@@ -5,6 +5,7 @@ mixin AccountControllerMixin {
   Rx<Account> accountX = Account().obs;
 
   void updateAccount({required Account account}) {
+    if (account.image == "string") account.image = "";
     accountX.value = account;
   }
 

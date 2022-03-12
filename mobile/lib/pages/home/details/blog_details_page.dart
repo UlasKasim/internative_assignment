@@ -37,10 +37,10 @@ class _BlogDetailsPageState extends State<BlogDetailsPage> {
         actions: [
           Obx(
             () => IconButton(
-              onPressed: vc.onFavoritePressed,
+              onPressed: () => vc.onFavoritePressed(vc.blogX.value),
               iconSize: 30,
               icon: const Icon(Icons.favorite),
-              color: vc.isFavorite() ? KColors.negativeColor : KColors.primaryColor,
+              color: vc.isFavorite(vc.blogX.value) ? KColors.negativeColor : KColors.primaryColor,
             ),
           ),
         ],

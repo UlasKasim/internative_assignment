@@ -24,24 +24,26 @@ class ImageBox extends StatelessWidget {
           EdgeInsets.symmetric(vertical: padding ?? Suw.h(40), horizontal: padding ?? Suw.h(40)),
       decoration: KDecoration.boxDecoration(),
       child: !isAssetImage
-          ? Image.network(
-              url,
-              height: height ?? Suw.h(120),
-              width: width,
-              fit: boxFit,
-              frameBuilder: (cntx, w, val, boolean) {
-                if (val == null) {
-                  return Center(
-                    child: Image.asset(
-                      'assets/images/loader.gif',
-                      height: Suw.h(120),
-                      width: Suw.h(120),
-                    ),
-                  );
-                }
-                return w;
-              },
-            )
+          ? url == ""
+              ? const Center(child: Text("Image couldn't load"))
+              : Image.network(
+                  url,
+                  height: height ?? Suw.h(120),
+                  width: width,
+                  fit: boxFit,
+                  frameBuilder: (cntx, w, val, boolean) {
+                    if (val == null) {
+                      return Center(
+                        child: Image.asset(
+                          'assets/images/loader.gif',
+                          height: Suw.h(120),
+                          width: Suw.h(120),
+                        ),
+                      );
+                    }
+                    return w;
+                  },
+                )
           : Image.asset(
               url,
               fit: boxFit,

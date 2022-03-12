@@ -16,7 +16,7 @@ class BlogComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Suw.h(600),
+      height: Suw.h(450),
       width: Suw.w(540),
       decoration: KDecoration.boxDecoration(
           backColor: KColors.primaryColor.withOpacity(0.2),
@@ -31,17 +31,14 @@ class BlogComponent extends StatelessWidget {
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15), topRight: Radius.circular(15))),
-                child: Hero(
-                  tag: blog.id!,
-                  child: Container(
-                    height: Suw.h(600),
-                    width: Suw.w(540),
-                    padding: EdgeInsets.zero,
-                    decoration: KDecoration.boxDecoration(
-                      backgroundImagePath: blog.image!,
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-                    ),
+                child: Container(
+                  height: Suw.h(450),
+                  width: Suw.w(540),
+                  padding: EdgeInsets.zero,
+                  decoration: KDecoration.boxDecoration(
+                    backgroundImagePath: blog.image!,
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                   ),
                 ),
               ),

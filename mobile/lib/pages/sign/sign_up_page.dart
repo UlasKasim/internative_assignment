@@ -45,6 +45,9 @@ class _SignUpPageState extends State<SignUpPage> {
       child: Column(
         children: [
           _buildImage(),
+          const SizedBox(
+            height: 100,
+          ),
           _buildForm(),
         ],
       ),
@@ -52,15 +55,10 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _buildImage() {
-    return SizedBox(
-      height: Suw.h(550),
-      width: Suw.w(880),
-      child: Hero(
-        tag: SignConstants.logoHeroTag,
-        child: Image.asset(
-          SignConstants.logoPath,
-          fit: BoxFit.cover,
-        ),
+    return Hero(
+      tag: SignConstants.logoHeroTag,
+      child: Image.asset(
+        SignConstants.logoPath,
       ),
     );
   }
