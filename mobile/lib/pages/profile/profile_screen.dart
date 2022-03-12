@@ -38,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
           () => PlacePickerComponent(
             initialPosition: vc.accountController.accountX.value.location!,
             onPlacePicked: vc.setLocation,
-            height: Suw.h(600),
+            height: Suw.h(context, 600),
           ),
         ),
         const SizedBox(

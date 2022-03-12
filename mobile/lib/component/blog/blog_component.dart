@@ -16,8 +16,8 @@ class BlogComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Suw.h(450),
-      width: Suw.w(540),
+      height: Suw.h(context, 450),
+      width: Suw.w(context, 540),
       decoration: KDecoration.boxDecoration(
           backColor: KColors.primaryColor.withOpacity(0.2),
           borderRadius: BorderRadius.circular(15)),
@@ -32,8 +32,8 @@ class BlogComponent extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15), topRight: Radius.circular(15))),
                 child: Container(
-                  height: Suw.h(450),
-                  width: Suw.w(540),
+                  height: Suw.h(context, 450),
+                  width: Suw.w(context, 540),
                   padding: EdgeInsets.zero,
                   decoration: KDecoration.boxDecoration(
                     backgroundImagePath: blog.image!,

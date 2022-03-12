@@ -10,7 +10,7 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final FavoriteVC vc = Get.put(FavoriteVC());
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: Suw.w(25)),
+      padding: EdgeInsets.symmetric(horizontal: Suw.w(context, 25)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

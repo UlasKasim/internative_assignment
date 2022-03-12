@@ -66,7 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Widget _buildForm() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: Suw.w(50)),
+      padding: EdgeInsets.symmetric(horizontal: Suw.w(context, 50)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

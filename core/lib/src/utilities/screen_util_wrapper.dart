@@ -1,40 +1,19 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
 class Suw {
-  static Widget init(Widget child) {
-    return ScreenUtilInit(
-      builder: () => child,
-      designSize: const Size(1080, 1920),
-    );
-  }
-
   //Height
-  static double w(double width) => ScreenUtil().setWidth(width);
+  static double scaleWidth(BuildContext context) => MediaQuery.of(context).size.width;
+
+  static double scaleHeight(BuildContext context) => MediaQuery.of(context).size.height;
+
+  static double w(BuildContext context, double width) => (scaleWidth(context) / 1080) * width;
 
   //Width
-  static double h(double height) => ScreenUtil().setHeight(height);
+  static double h(BuildContext context, double height) => (scaleHeight(context) / 1920) * height;
 
-  //Font Size
-  static double fs(double paramFontSize) {
-    return paramFontSize * 0.35;
-    // double fontSize = ScreenUtil.instance.setSp(paramFontSize);
-    // if (ScreenUtil.screenWidth >= ScreenUtil.screenHeight) {
-    //   double factor = ScreenUtil.screenHeight / ScreenUtil.screenWidth;
-    //   return fontSize * factor * 0.8;
-    // } else {
-    //   double factor = ScreenUtil.screenWidth / ScreenUtil.screenHeight;
-    //   return fontSize * factor;
-    // }
-  }
+  static double portionWidth(BuildContext context, double portion, {double padding = 0}) =>
+      (scaleWidth(context) - padding) * portion;
 
-  static double get scaleWidth => ScreenUtil().scaleWidth;
-
-  static double get scaleHeight => ScreenUtil().scaleHeight;
-
-  static double portionWidth(double portion, {double padding = 0}) =>
-      (ScreenUtil().screenWidth - padding) * portion;
-
-  static double portionHeight(double portion, {double padding = 0}) =>
-      (ScreenUtil().screenHeight - padding) * portion;
+  static double portionHeight(BuildContext context, double portion, {double padding = 0}) =>
+      (scaleHeight(context) - padding) * portion;
 }

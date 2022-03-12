@@ -21,8 +21,8 @@ class CategoryComponent extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           shadowColor: Colors.grey,
           child: Container(
-            height: Suw.portionHeight(0.15),
-            width: Suw.w(500),
+            height: Suw.portionHeight(context, 0.15),
+            width: Suw.w(context, 500),
             decoration: KDecoration.boxDecoration(
               backgroundImagePath: category.image!,
               borderRadius: BorderRadius.circular(15),

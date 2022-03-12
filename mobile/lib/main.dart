@@ -31,24 +31,22 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Suw.init(
-      GetMaterialApp(
-        navigatorObservers: [HeroController()],
-        transitionDuration: const Duration(microseconds: 1),
-        theme: ThemeData.light().copyWith(
-          scaffoldBackgroundColor: Colors.white,
-          primaryColor: KColors.primaryColor,
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
-          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(
-            bodyColor: Colors.black,
-          ),
+    return GetMaterialApp(
+      navigatorObservers: [HeroController()],
+      transitionDuration: const Duration(microseconds: 1),
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Colors.white,
+        primaryColor: KColors.primaryColor,
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(
+          bodyColor: Colors.black,
         ),
-        localizationsDelegates: GlobalMaterialLocalizations.delegates,
-        supportedLocales: const [Locale("tr")],
-        debugShowCheckedModeBanner: false,
-        getPages: getPages,
-        initialRoute: AppRoutes.SIGN_SPLASH,
       ),
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      supportedLocales: const [Locale("tr")],
+      debugShowCheckedModeBanner: false,
+      getPages: getPages,
+      initialRoute: AppRoutes.SIGN_SPLASH,
     );
   }
 }

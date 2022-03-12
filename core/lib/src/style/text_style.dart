@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../utilities/_utility_exporter.dart';
 import '_style_exporter.dart';
 
 class KTextStyle {
@@ -11,28 +9,7 @@ class KTextStyle {
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: Suw.fs(50),
-          color: textStyleBase.color,
-          fontWeight: textStyleBase.fontWeight,
-          fontStyle: textStyleBase.fontStyle,
-          shadows: [
-            Shadow(
-              blurRadius: 10.0,
-              color: textStyleBase.shadowColor,
-              offset: const Offset(5.0, 5.0),
-            ),
-          ],
-        ),
-      );
-
-  ///FontSize:24
-  static TextStyle h2({
-    TextStyleBase textStyleBase = const TextStyleBase(),
-  }) =>
-      GoogleFonts.roboto(
-        textStyle: TextStyle(
-          height: textStyleBase.height,
-          fontSize: Suw.fs(44),
+          fontSize: 24,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
@@ -47,13 +24,13 @@ class KTextStyle {
       );
 
   ///FontSize:20
-  static TextStyle h3({
+  static TextStyle h2({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: Suw.fs(40),
+          fontSize: 20,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
@@ -68,13 +45,13 @@ class KTextStyle {
       );
 
   ///FontSize:16
-  static TextStyle h4({
+  static TextStyle h3({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: Suw.fs(36),
+          fontSize: 16,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
@@ -89,13 +66,13 @@ class KTextStyle {
       );
 
   ///FontSize:14
-  static TextStyle h5({
+  static TextStyle h4({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: Suw.fs(34),
+          fontSize: 14,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
@@ -110,13 +87,13 @@ class KTextStyle {
       );
 
   ///FontSize:12
-  static TextStyle h6({
+  static TextStyle h5({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: Suw.fs(32),
+          fontSize: 12,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
@@ -130,32 +107,14 @@ class KTextStyle {
         ),
       );
 
-  static TextStyle h7({
+  ///FontSize:10
+  static TextStyle h6({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: Suw.fs(28),
-          color: textStyleBase.color,
-          fontWeight: textStyleBase.fontWeight,
-          fontStyle: textStyleBase.fontStyle,
-          shadows: [
-            Shadow(
-              blurRadius: 10.0,
-              color: textStyleBase.shadowColor,
-              offset: const Offset(5.0, 5.0),
-            ),
-          ],
-        ),
-      );
-  static TextStyle h8({
-    TextStyleBase textStyleBase = const TextStyleBase(),
-  }) =>
-      GoogleFonts.roboto(
-        textStyle: TextStyle(
-          height: textStyleBase.height,
-          fontSize: Suw.fs(24),
+          fontSize: 10,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,

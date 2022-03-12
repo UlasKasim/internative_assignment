@@ -62,8 +62,8 @@ class _BlogDetailsPageState extends State<BlogDetailsPage> {
     return ListView(
       children: [
         Container(
-          height: Suw.h(700),
-          width: Suw.w(1080),
+          height: Suw.h(context, 700),
+          width: Suw.w(context, 1080),
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Image.network(widget.blog.image!, fit: BoxFit.cover),
         ),

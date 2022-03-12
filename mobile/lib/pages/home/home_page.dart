@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: Suw.w(25)),
+      padding: EdgeInsets.symmetric(horizontal: Suw.w(context, 25)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
               categoryList: vc.categoryListX.value,
               selectedCategory: vc.selectedCategoryX.value,
               onCategorySelected: vc.onCategorySelected,
-              height: Suw.portionHeight(0.2),
+              height: Suw.portionHeight(context, 0.2),
             ),
           ),
           Padding(

@@ -20,15 +20,14 @@ class ImageBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      padding:
-          EdgeInsets.symmetric(vertical: padding ?? Suw.h(40), horizontal: padding ?? Suw.h(40)),
+      padding: EdgeInsets.symmetric(vertical: padding ?? 20, horizontal: padding ?? 20),
       decoration: KDecoration.boxDecoration(),
       child: !isAssetImage
           ? url == ""
               ? const Center(child: Text("Image couldn't load"))
               : Image.network(
                   url,
-                  height: height ?? Suw.h(120),
+                  height: height ?? Suw.h(context, 120),
                   width: width,
                   fit: boxFit,
                   frameBuilder: (cntx, w, val, boolean) {
@@ -36,8 +35,8 @@ class ImageBox extends StatelessWidget {
                       return Center(
                         child: Image.asset(
                           'assets/images/loader.gif',
-                          height: Suw.h(120),
-                          width: Suw.h(120),
+                          height: Suw.h(context, 120),
+                          width: Suw.h(context, 120),
                         ),
                       );
                     }

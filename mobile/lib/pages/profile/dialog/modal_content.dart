@@ -40,7 +40,7 @@ class ModalContent extends StatelessWidget {
               rotate: true,
               onlyExpand: true,
               onPressed: () {
-                Get.dialog(selectPhotoDialogContent());
+                Get.dialog(selectPhotoDialogContent(context));
               },
             ),
             const SizedBox(
@@ -62,11 +62,11 @@ class ModalContent extends StatelessWidget {
     );
   }
 
-  Widget selectPhotoDialogContent() {
+  Widget selectPhotoDialogContent(context) {
     return Dialog(
       child: Container(
         height: 200,
-        width: Suw.w(800),
+        width: Suw.w(context, 800),
         padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration:
             KDecoration.boxDecoration(borderRadius: const BorderRadius.all(Radius.circular(25))),
