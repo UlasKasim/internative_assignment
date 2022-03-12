@@ -3,13 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import '_style_exporter.dart';
 
 class KTextStyle {
+  ///FontSize:22
   static TextStyle h1({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: 24,
+          fontSize: 22,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
@@ -23,35 +24,14 @@ class KTextStyle {
         ),
       );
 
-  ///FontSize:20
+  ///FontSize:18
   static TextStyle h2({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
-          fontSize: 20,
-          color: textStyleBase.color,
-          fontWeight: textStyleBase.fontWeight,
-          fontStyle: textStyleBase.fontStyle,
-          shadows: [
-            Shadow(
-              blurRadius: 10.0,
-              color: textStyleBase.shadowColor,
-              offset: const Offset(5.0, 5.0),
-            ),
-          ],
-        ),
-      );
-
-  ///FontSize:16
-  static TextStyle h3({
-    TextStyleBase textStyleBase = const TextStyleBase(),
-  }) =>
-      GoogleFonts.roboto(
-        textStyle: TextStyle(
-          height: textStyleBase.height,
-          fontSize: 16,
+          fontSize: 18,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
@@ -66,7 +46,7 @@ class KTextStyle {
       );
 
   ///FontSize:14
-  static TextStyle h4({
+  static TextStyle h3({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
@@ -87,7 +67,7 @@ class KTextStyle {
       );
 
   ///FontSize:12
-  static TextStyle h5({
+  static TextStyle h4({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
@@ -108,13 +88,34 @@ class KTextStyle {
       );
 
   ///FontSize:10
-  static TextStyle h6({
+  static TextStyle h5({
     TextStyleBase textStyleBase = const TextStyleBase(),
   }) =>
       GoogleFonts.roboto(
         textStyle: TextStyle(
           height: textStyleBase.height,
           fontSize: 10,
+          color: textStyleBase.color,
+          fontWeight: textStyleBase.fontWeight,
+          fontStyle: textStyleBase.fontStyle,
+          shadows: [
+            Shadow(
+              blurRadius: 10.0,
+              color: textStyleBase.shadowColor,
+              offset: const Offset(5.0, 5.0),
+            ),
+          ],
+        ),
+      );
+
+  ///FontSize:8
+  static TextStyle h6({
+    TextStyleBase textStyleBase = const TextStyleBase(),
+  }) =>
+      GoogleFonts.roboto(
+        textStyle: TextStyle(
+          height: textStyleBase.height,
+          fontSize: 8,
           color: textStyleBase.color,
           fontWeight: textStyleBase.fontWeight,
           fontStyle: textStyleBase.fontStyle,
