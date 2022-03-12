@@ -53,7 +53,7 @@ class UserController extends GetxController {
       }
       ServerConfig.setToken(response.data);
       savePreferences(user);
-      serverController.onStartServer();
+      await serverController.onStartServer();
       onSuccess.call(user);
     } catch (e) {
       Logger().e("Error on UserController signUp. Error: $e");

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:get/get.dart';
 import 'package:kernel/kernel.dart';
+import 'package:mobile/pages/home/_home_page_exporter.dart';
 
 class BlogDetailsPage extends StatefulWidget {
   final Blog blog;
@@ -45,7 +46,7 @@ class _BlogDetailsPageState extends State<BlogDetailsPage> {
           ),
         ],
         title: Text(
-          "Article Detail",
+          HomeConstants.ARTICLE_DETAIL,
           style: KTextStyle.h1(
             textStyleBase: const TextStyleBase(
               fontWeight: FontWeight.bold,

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:core/src/style/_style_exporter.dart';
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 // ignore: must_be_immutable
 class RectangleTextButton extends StatefulWidget {
@@ -13,6 +14,7 @@ class RectangleTextButton extends StatefulWidget {
   final TextStyle? textStyle;
   final TextAlign? textAlign;
   final EdgeInsetsGeometry? textPadding;
+  final int rotate;
 
   const RectangleTextButton({
     Key? key,
@@ -29,6 +31,7 @@ class RectangleTextButton extends StatefulWidget {
     this.backColor = Colors.white,
     this.textStyle,
     this.textPadding,
+    this.rotate = 0,
   }) : super(key: key);
 
   @override
@@ -77,10 +80,13 @@ class _RectangleTextButtonState extends State<RectangleTextButton> {
               if (widget.icon != null)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Icon(
-                    widget.icon ?? Icons.ac_unit,
-                    size: widget.iconSize ?? 28,
-                    color: widget.textColor,
+                  child: Transform.rotate(
+                    angle: widget.rotate * math.pi / 180,
+                    child: Icon(
+                      widget.icon ?? Icons.ac_unit,
+                      size: widget.iconSize ?? 28,
+                      color: widget.textColor,
+                    ),
                   ),
                 ),
               Expanded(

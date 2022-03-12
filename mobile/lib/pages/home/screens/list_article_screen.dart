@@ -1,10 +1,8 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile/pages/home/components/blog/blog_list_component.dart';
-import 'package:mobile/pages/home/components/category/category_list_component.dart';
-
-import '../details/blog_details_page.dart';
+import 'package:mobile/pages/home/_home_page_exporter.dart';
+import 'package:mobile/pages/home/details/blog_details_page.dart';
 
 class ListArticleScreen extends StatelessWidget {
   ListArticleScreen({Key? key}) : super(key: key);
@@ -28,7 +26,7 @@ class ListArticleScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 20, bottom: 20),
             child: CustomTitle(
-              titleText: "Blog",
+              titleText: HomeConstants.BLOG,
               style: KTextStyle.h1(textStyleBase: const TextStyleBase(fontWeight: FontWeight.bold)),
             ),
           ),

@@ -101,11 +101,11 @@ class _HomePageState extends State<HomePage> {
   String getTitle() {
     switch (indexX.value) {
       case 0:
-        return "My Favorites";
+        return HomeConstants.MY_FAVORITES;
       case 1:
-        return "Home";
+        return HomeConstants.HOME;
       case 2:
-        return "My Profile";
+        return HomeConstants.MY_PROFILE;
       default:
         return "";
     }

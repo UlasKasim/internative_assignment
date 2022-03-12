@@ -1,9 +1,9 @@
 class SignConstants {
-  static String login = 'Login';
-  static String register = 'Register';
-  static String logoPath = 'assets/images/logo.png';
-  static String logoHeroTag = 'logoHeroTag';
-  static String email = 'Email';
-  static String password = 'Password';
-  static String rePassword = 'Re-Password';
+  static String LOGIN = 'Login';
+  static String REGISTER = 'Register';
+  static String LOGO_PATH = 'assets/images/logo.png';
+  static String LOGO_HERO_TAG = 'logoHeroTag';
+  static String EMAIL = 'Email';
+  static String PASSWORD = 'Password';
+  static String RE_PASSWORD = 'Re-Password';
 }

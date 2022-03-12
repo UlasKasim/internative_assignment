@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kernel/kernel.dart';
+import 'package:mobile/component/_component_exporter.dart';
 import 'package:mobile/constants/_constants_exporter.dart';
 import 'package:mobile/pages/sign/_sign_page_exporter.dart';
 
@@ -22,11 +23,11 @@ class _SignInPageState extends State<SignInPage> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        // resizeToAvoidBottomInset: false,
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            SignConstants.login,
+            SignConstants.LOGIN,
             style: KTextStyle.h1(
               textStyleBase: const TextStyleBase(
                 fontWeight: FontWeight.bold,
@@ -56,9 +57,9 @@ class _SignInPageState extends State<SignInPage> {
 
   Widget _buildImage() {
     return Hero(
-      tag: SignConstants.logoHeroTag,
+      tag: SignConstants.LOGO_HERO_TAG,
       child: Image.asset(
-        SignConstants.logoPath,
+        SignConstants.LOGO_PATH,
       ),
     );
   }
@@ -70,7 +71,7 @@ class _SignInPageState extends State<SignInPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           RegularTextFormField(
-            labelText: SignConstants.email,
+            labelText: SignConstants.EMAIL,
             prefixIconData: Icons.email_rounded,
             floatingLabelBehavior: FloatingLabelBehavior.never,
             controller: TextEditingController(text: vc.userX.value.email),
@@ -80,48 +81,23 @@ class _SignInPageState extends State<SignInPage> {
           const SizedBox(height: 10),
           PasswordTextField(
             floatingLabelBehavior: FloatingLabelBehavior.never,
-            labelText: SignConstants.password,
+            labelText: SignConstants.PASSWORD,
             controller: TextEditingController(text: vc.userX.value.password),
             onChanged: vc.userX.value.onPasswordChanged,
             validatorList: vc.userX.value.passwordValidators(),
           ),
           const SizedBox(height: 40),
-          Row(
-            children: [
-              Expanded(
-                child: RectangleTextButton(
-                  text: SignConstants.login,
-                  backColor: KColors.primaryColor,
-                  textStyle: KTextStyle.h3(
-                    textStyleBase: const TextStyleBase(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  icon: Icons.login_sharp,
-                  iconSize: 20,
-                  textColor: Colors.white,
-                  onPressed: () => vc.onSignInPressed(route: AppRoutes.HOME),
-                ),
-              )
-            ],
+          GeneralButtonComponent(
+            isPrimaryBackground: true,
+            text: SignConstants.LOGIN,
+            onPressed: () => vc.onSignInPressed(route: AppRoutes.HOME),
           ),
           const SizedBox(height: 10),
-          Row(
-            children: [
-              Expanded(
-                child: RectangleTextButton(
-                  text: SignConstants.register,
-                  backColor: Colors.white,
-                  textStyle: KTextStyle.h3(),
-                  icon: Icons.login_sharp,
-                  iconSize: 20,
-                  textColor: KColors.primaryColor,
-                  onPressed: () => vc.onPushPressed(route: AppRoutes.SIGN_UP),
-                ),
-              )
-            ],
-          )
+          GeneralButtonComponent(
+            isPrimaryBackground: false,
+            text: SignConstants.REGISTER,
+            onPressed: () => vc.onPushPressed(route: AppRoutes.SIGN_UP),
+          ),
         ],
       ),
     );

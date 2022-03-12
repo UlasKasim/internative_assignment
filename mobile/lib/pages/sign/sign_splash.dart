@@ -23,9 +23,9 @@ class _SignSplashState extends State<SignSplash> {
     return Scaffold(
       body: Center(
         child: Hero(
-          tag: SignConstants.logoHeroTag,
+          tag: SignConstants.LOGO_HERO_TAG,
           child: Image.asset(
-            SignConstants.logoPath,
+            SignConstants.LOGO_PATH,
             fit: BoxFit.cover,
           ),
         ),

@@ -27,6 +27,7 @@ class ProfileVC extends GetxController {
           account: accountController.accountX.value
             ..onLocationChanged(Location(
                 latitude: position.latitude.toString(), longitude: position.longitude.toString())));
+      accountController.accountX.refresh();
     }
   }
 
@@ -64,7 +65,7 @@ class ProfileVC extends GetxController {
   Future<void> _updateAccount(Location location, String imageLink) async {
     await accountController.updateAccountThunk(
       account: accountController.accountX.value
-        ..onLocationChanged(locationX.value)
+        ..onLocationChanged(location)
         ..onImageLinkChanged(imageLink),
       onSuccess: () {
         successSnackbar(toastTitle: "Success", toastMessage: "Profile Updated");

@@ -29,7 +29,10 @@ class PlacePickerComponent extends StatelessWidget {
           usePlaceDetailSearch: false,
           selectInitialPosition: true,
           initialPosition: LatLng(
-              double.parse(initialPosition.latitude!), double.parse(initialPosition.longitude!)),
+              double.parse(
+                  initialPosition.latitude! == "" ? "41.0252104" : initialPosition.latitude!),
+              double.parse(
+                  initialPosition.longitude! == "" ? "28.9743033" : initialPosition.longitude!)),
           selectedPlaceWidgetBuilder: (_, r, st, b) {
             onPlacePicked.call(Location(
                 latitude: r?.geometry?.location.lat.toString() ?? "",

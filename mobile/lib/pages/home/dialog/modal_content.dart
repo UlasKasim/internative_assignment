@@ -2,6 +2,8 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mobile/component/_component_exporter.dart';
+import 'package:mobile/pages/home/_home_page_exporter.dart';
 
 class ModalContent extends StatelessWidget {
   // final Function
@@ -18,8 +20,8 @@ class ModalContent extends StatelessWidget {
         Obx(
           () => Expanded(
             child: vc.selectedFileUrl.value == ""
-                ? const Center(
-                    child: Text("File not selected"),
+                ? Center(
+                    child: Text(HomeConstants.FILE_NOT_SELECTED),
                   )
                 : ImageBox(url: vc.selectedFileUrl.value, isAssetImage: false),
           ),
@@ -29,35 +31,31 @@ class ModalContent extends StatelessWidget {
         ),
         Row(
           children: [
-            const Spacer(),
-            Expanded(
-              flex: 20,
-              child: RectangleTextButton(
-                text: "Select",
-                backColor: KColors.primaryColor,
-                textStyle: KTextStyle.h3(textStyleBase: const TextStyleBase(color: Colors.white)),
-                icon: Icons.login_sharp,
-                iconSize: 20,
-                textColor: Colors.white,
-                onPressed: () {
-                  Get.dialog(selectPhotoDialogContent());
-                },
-              ),
+            const SizedBox(
+              width: 10,
             ),
-            const Spacer(),
-            Expanded(
-              flex: 20,
-              child: RectangleTextButton(
-                text: "Remove",
-                backColor: Colors.white,
-                textStyle: KTextStyle.h3(),
-                icon: Icons.login_sharp,
-                iconSize: 20,
-                textColor: KColors.primaryColor,
-                onPressed: vc.onFileRemovePressed,
-              ),
+            GeneralButtonComponent(
+              isPrimaryBackground: true,
+              text: HomeConstants.SELECT,
+              rotate: true,
+              onlyExpand: true,
+              onPressed: () {
+                Get.dialog(selectPhotoDialogContent());
+              },
             ),
-            const Spacer(),
+            const SizedBox(
+              width: 10,
+            ),
+            GeneralButtonComponent(
+              isPrimaryBackground: false,
+              text: HomeConstants.REMOVE,
+              rotate: true,
+              onlyExpand: true,
+              onPressed: vc.onFileRemovePressed,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
           ],
         )
       ],
@@ -74,40 +72,21 @@ class ModalContent extends StatelessWidget {
             KDecoration.boxDecoration(borderRadius: const BorderRadius.all(Radius.circular(25))),
         child: Column(
           children: [
-            const Expanded(child: Center(child: Text("Select a Picture"))),
-            Row(
-              children: [
-                Expanded(
-                  child: RectangleTextButton(
-                    text: "Camera",
-                    backColor: KColors.primaryColor,
-                    textStyle:
-                        KTextStyle.h3(textStyleBase: const TextStyleBase(color: Colors.white)),
-                    icon: Icons.camera_alt_rounded,
-                    iconSize: 20,
-                    textColor: Colors.white,
-                    onPressed: () => vc.onFileSelectPressed(ImageSource.camera),
-                  ),
-                ),
-              ],
+            Expanded(child: Center(child: Text(HomeConstants.SELECT_A_PICTURE))),
+            GeneralButtonComponent(
+              isPrimaryBackground: true,
+              text: HomeConstants.CAMERA,
+              icon: Icons.camera_alt_rounded,
+              onPressed: () => vc.onFileSelectPressed(ImageSource.camera),
             ),
             const SizedBox(
               height: 10,
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: RectangleTextButton(
-                    text: "Gallery",
-                    backColor: Colors.white,
-                    textStyle: KTextStyle.h3(),
-                    icon: Icons.image,
-                    iconSize: 20,
-                    textColor: KColors.primaryColor,
-                    onPressed: () => vc.onFileSelectPressed(ImageSource.gallery),
-                  ),
-                ),
-              ],
+            GeneralButtonComponent(
+              isPrimaryBackground: false,
+              text: HomeConstants.GALLERY,
+              icon: Icons.image,
+              onPressed: () => vc.onFileSelectPressed(ImageSource.gallery),
             ),
             const SizedBox(
               height: 10,
